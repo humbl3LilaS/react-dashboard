@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
+import NavBar from "./NavBar/NavBar";
 import SettingBtn from "./SettingBtn";
 import SideBar from "./Sidebar/SideBar";
 import { Outlet } from "react-router-dom";
@@ -6,7 +6,7 @@ import Container from "./Container";
 
 const Layout = () => {
 	return (
-		<section>
+		<section className="flex w-screen h-screen">
 			<SideBar />
 			<Container>
 				<NavBar />
