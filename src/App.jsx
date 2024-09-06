@@ -1,5 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
+import ECommerce from "./pages/ECommerce";
+import Orders from "./pages/Orders";
+import Employee from "./pages/Employee";
+import Customers from "./pages/Customers";
+import Kanban from "./pages/Kanban";
+import Editor from "./pages/Editor";
+import Calendar from "./pages/Calendar";
+import ColorPicker from "./pages/ColorPicker";
+import LineChart from "./pages/charts/LineChart";
+import AreaChart from "./pages/charts/AreaChart";
+import FinancialChart from "./pages/charts/FinancialChart";
+import ColorMapping from "./pages/charts/ColorMapping";
+import Pyramid from "./pages/charts/Pyramid";
+import StackedChart from "./pages/charts/StackedChart";
 
 const routes = createBrowserRouter([
 	{
@@ -8,53 +22,49 @@ const routes = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <h1>hello</h1>,
-			},
-			{
-				path: "ecommerce",
-				element: <h1>ECommerce</h1>,
+				element: <ECommerce />,
 			},
 
 			// pages
 			{
 				path: "orders",
-				element: <h1>Orders</h1>,
+				element: <Orders />,
 			},
 			{
 				path: "employees",
-				element: <h1>Employees</h1>,
+				element: <Employee />,
 			},
 			{
 				path: "customers",
-				element: <h1>customers</h1>,
+				element: <Customers />,
 			},
 
 			// apps
 			{
 				path: "kanban",
-				element: <h1>kanban</h1>,
+				element: <Kanban />,
 			},
 			{
 				path: "editor",
-				element: <h1>editor</h1>,
+				element: <Editor />,
 			},
 			{
 				path: "calendar",
-				element: <h1>Calendar</h1>,
+				element: <Calendar />,
 			},
 			{
 				path: "color-picker",
-				element: <h1>Color Picker</h1>,
+				element: <ColorPicker />,
 			},
 
 			// charts
 			{
 				path: "line",
-				element: <h1>Line chart</h1>,
+				element: <LineChart />,
 			},
 			{
 				path: "area",
-				element: <h1>Area Chart</h1>,
+				element: <AreaChart />,
 			},
 			{
 				path: "pie",
@@ -62,19 +72,19 @@ const routes = createBrowserRouter([
 			},
 			{
 				path: "financial",
-				element: <h1>Financial Chart</h1>,
+				element: <FinancialChart />,
 			},
 			{
 				path: "color-mapping",
-				element: <h1>Color Mapping</h1>,
+				element: <ColorMapping />,
 			},
 			{
 				path: "pyramid",
-				element: <h1>Pyramid Chart</h1>,
+				element: <Pyramid />,
 			},
 			{
 				path: "stacked",
-				element: <h1>Stacked Chart</h1>,
+				element: <StackedChart />,
 			},
 		],
 	},
