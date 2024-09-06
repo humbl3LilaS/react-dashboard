@@ -1,18 +1,18 @@
-import { useSideBarState } from "../store/sideBarState";
+import { useApplicationState } from "../store/applicationState";
 import { cn } from "../util/util";
 
 const Container = ({ children }) => {
-	const { active, setActive } = useSideBarState();
+	const { isSideBarActive, setSideBarActive } = useApplicationState();
 	return (
 		<div
 			className={cn(
 				"min-h-screen w-full bg-main-bg dark:bg-main-dark-bg md:ml-27",
-				active ? "md:ml-72" : "flex-2",
+				isSideBarActive ? "md:ml-72" : "flex-2",
 			)}>
 			{children}
 			<button
 				type="button"
-				onClick={() => setActive(!active)}>
+				onClick={() => setSideBarActive(!isSideBarActive)}>
 				Toggle
 			</button>
 		</div>

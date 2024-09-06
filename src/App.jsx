@@ -14,6 +14,8 @@ import FinancialChart from "./pages/charts/FinancialChart";
 import ColorMapping from "./pages/charts/ColorMapping";
 import Pyramid from "./pages/charts/Pyramid";
 import StackedChart from "./pages/charts/StackedChart";
+import PieChart from "./pages/charts/PieChart";
+import BarChart from "./pages/charts/BarChart";
 
 const routes = createBrowserRouter([
 	{
@@ -68,7 +70,11 @@ const routes = createBrowserRouter([
 			},
 			{
 				path: "pie",
-				element: <h1>Pie Chart</h1>,
+				element: <PieChart />,
+			},
+			{
+				path: "bar",
+				element: <BarChart />,
 			},
 			{
 				path: "financial",
