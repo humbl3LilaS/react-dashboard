@@ -1,4 +1,3 @@
-import React from "react";
 import {
 	AiOutlineCalendar,
 	AiOutlineShoppingCart,
@@ -42,7 +41,6 @@ import product4 from "../assets/images/product4.jpg";
 import product5 from "../assets/images/product5.jpg";
 import product6 from "../assets/images/product6.jpg";
 import product7 from "../assets/images/product7.jpg";
-import product8 from "../assets/images/product8.jpg";
 
 export const gridOrderImage = (props) => (
 	<div>

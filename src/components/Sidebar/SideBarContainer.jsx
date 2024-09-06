@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
@@ -9,7 +10,7 @@ export const SideBarContainer = ({ children }) => {
 	return (
 		<div
 			className={cn(
-				"w-72 fixed shadow-sideBar bg-white overflow-visible dark:bg-secondary-dark-bg md:z-50",
+				"w-1/5 shadow-sideBar bg-white overflow-visible dark:bg-secondary-dark-bg md:z-50",
 				!isSideBarActive && "hidden",
 			)}>
 			<div className="ml-3 pb-10 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto">

@@ -1,5 +1,5 @@
 import { cn } from "../../util/util";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { links } from "../../data/Data";
 
 const SideBarNav = () => {
