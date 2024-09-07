@@ -10,7 +10,7 @@ export const SideBarContainer = ({ children }) => {
 	return (
 		<div
 			className={cn(
-				"w-1/5 shadow-sideBar bg-white overflow-visible dark:bg-secondary-dark-bg md:z-50",
+				"min-w-[300px] shadow-sideBar bg-white overflow-visible dark:bg-secondary-dark-bg md:z-50",
 				!isSideBarActive && "hidden",
 			)}>
 			<div className="ml-3 pb-10 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto">
