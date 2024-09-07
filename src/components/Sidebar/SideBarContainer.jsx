@@ -4,9 +4,27 @@ import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
 import { useApplicationState } from "../../store/applicationState";
 import { cn } from "../../util/util";
+import { useEffect } from "react";
 
 export const SideBarContainer = ({ children }) => {
 	const { isSideBarActive, setSideBarActive } = useApplicationState();
+
+	useEffect(() => {
+		const mediaQuery = window.matchMedia("(max-width: 1000px");
+
+		const handler = (evt) => {
+			setSideBarActive(!evt.matches);
+		};
+
+		handler(mediaQuery);
+
+		mediaQuery.addEventListener("change", handler);
+
+		return () => {
+			mediaQuery.removeEventListener("change", handler);
+		};
+	}, [setSideBarActive]);
+
 	return (
 		<div
 			className={cn(
