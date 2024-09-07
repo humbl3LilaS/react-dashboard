@@ -1,11 +1,15 @@
-import NavBtn from "./NavBtn";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 import avatar from "../../assets/images/avatar.jpg";
+import { useApplicationState } from "../../store/applicationState";
 
 const ProfileToggle = () => {
+	const { isProfileActive, setProfileActive } = useApplicationState();
+
 	return (
-		<li className="p-1 flex items-center gap-2 cursor-pointer rounded-lg hover:bg-light-gray">
+		<li
+			className="p-1 flex items-center gap-2 cursor-pointer rounded-lg hover:bg-light-gray"
+			onClick={() => setProfileActive(!isProfileActive)}>
 			<img
 				src={avatar}
 				alt="profile image"

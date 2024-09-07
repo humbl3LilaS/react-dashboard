@@ -1,5 +1,13 @@
+import CartPopup from "./CartPopup";
+import CartToggle from "./CartToggle";
+
 const Cart = () => {
-	return <div>Cart</div>;
+	return (
+		<li className="relative">
+			<CartToggle />
+			<CartPopup />
+		</li>
+	);
 };
 
 export default Cart;

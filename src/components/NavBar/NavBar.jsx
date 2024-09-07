@@ -1,8 +1,9 @@
-import SideBarToggle from "./SideBarToggle";
-import CartToggle from "./CartToggle";
-import ChatToggle from "./ChatToggle";
-import NotificationToggle from "./NotificationToggle";
-import ProfileToggle from "./ProfileToggle";
+import SideBarToggle from "../Sidebar/SideBarToggle";
+import Chat from "../Chat/Chat";
+import Notification from "../Notification/Notification";
+
+import Cart from "../Cart/Cart";
+import Profile from "../Profile/Profile";
 
 const NavBar = () => {
 	return (
@@ -12,16 +13,14 @@ const NavBar = () => {
 					<li className="mr-auto">
 						<SideBarToggle />
 					</li>
-					<li>
-						<CartToggle />
-					</li>
-					<li>
-						<ChatToggle />
-					</li>
-					<li>
-						<NotificationToggle />
-					</li>
-					<ProfileToggle />
+
+					<Cart />
+
+					<Chat />
+
+					<Notification />
+
+					<Profile />
 				</ul>
 			</nav>
 		</div>

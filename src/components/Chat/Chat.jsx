@@ -1,8 +1,12 @@
+import ChatPopup from "./ChatPopup";
+import ChatToggle from "./ChatToggle";
+
 const Chat = () => {
 	return (
-		<div>
-			<h1>chat</h1>
-		</div>
+		<li className="relative">
+			<ChatToggle />
+			<ChatPopup />
+		</li>
 	);
 };
 
