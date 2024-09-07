@@ -9,8 +9,7 @@ const SideBarToggle = () => {
 	return (
 		<NavBtn
 			handler={() => setSideBarActive(!isSideBarActive)}
-			hidden={isSideBarActive}
-			className={"mr-auto"}>
+			hidden={isSideBarActive}>
 			<AiOutlineMenu />
 		</NavBtn>
 	);

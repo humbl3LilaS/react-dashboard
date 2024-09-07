@@ -1,6 +1,3 @@
-import { MdKeyboardArrowDown } from "react-icons/md";
-
-import avatar from "../../assets/images/avatar.jpg";
 import SideBarToggle from "./SideBarToggle";
 import CartToggle from "./CartToggle";
 import ChatToggle from "./ChatToggle";
@@ -12,7 +9,7 @@ const NavBar = () => {
 		<div className="p-2 relative md:px-4">
 			<nav>
 				<ul className="flex justify-end items-center gap-x-4">
-					<li>
+					<li className="mr-auto">
 						<SideBarToggle />
 					</li>
 					<li>
