@@ -35,7 +35,7 @@ export default {
 				590: "590px",
 			},
 			backgroundImage: {
-				"hero-pattern": "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+				"hero-pattern": "url('./src/assets/images/welcome-bg.svg')",
 			},
 			boxShadow: {
 				sideBar: "rgb(113 122 131 / 11%) 0px 7px 30px 0px",

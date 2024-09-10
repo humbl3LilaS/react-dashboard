@@ -1,14 +1,19 @@
 import { useApplicationState } from "../../store/applicationState";
+import PopupBackdrop from "../util/PopupBackdrop";
 
 const CartPopup = () => {
-	const { isCartActive } = useApplicationState();
+	const { isCartActive, setCartActive } = useApplicationState();
 
 	return (
 		<>
 			{isCartActive && (
-				<div className="absolute">
-					<h1>cart content</h1>
-				</div>
+				<>
+					<PopupBackdrop handler={() => setCartActive(false)} />
+
+					<div className={"absolute z-50"}>
+						<h1>cart</h1>
+					</div>
+				</>
 			)}
 		</>
 	);
