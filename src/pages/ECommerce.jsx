@@ -31,7 +31,7 @@ const ECommerce = () => {
 			{/* earning */}
 			<div
 				className={
-					"w-full my-3 flex flex-wrap justify-center items-center gap-2 lg:gap-4"
+					"w-full my-3 flex flex-wrap justify-center items-center gap-2 lg:justify-around"
 				}>
 				{earningData.map((item) => (
 					<div
@@ -59,31 +59,32 @@ const ECommerce = () => {
 			</div>
 
 			{/* Revenue Updates */}
-			<div className={"flex flex-wrap justify-center gap-10 "}>
-				<div
-					className={
-						"w-full m-3 p-4 rounded-2xl bg-white dark:text-gray-200 dark:bg-secondary-dark-bg"
-					}>
-					<div className={"flex justify-between px-10"}>
-						<p className={"text-xl font-semibold"}>Revenue Updates</p>
-						<div className={"flex items-center gap-4"}>
-							<p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
-								<span>
-									<GoDot />
-								</span>
-								<span>Expense</span>
-							</p>
-							<p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
-								<span>
-									<GoDot />
-								</span>
-								<span>Budget</span>
-							</p>
-						</div>
+
+			<div
+				className={
+					"w-full m-3 p-4 rounded-2xl bg-white dark:text-gray-200 dark:bg-secondary-dark-bg"
+				}>
+				<div className={"flex justify-between px-10"}>
+					<p className={"text-sm font-semibold md:text-xl"}>Revenue Updates</p>
+					<div className={"flex items-center gap-4"}>
+						<p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
+							<span>
+								<GoDot />
+							</span>
+							<span>Expense</span>
+						</p>
+						<p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
+							<span>
+								<GoDot />
+							</span>
+							<span>Budget</span>
+						</p>
 					</div>
 				</div>
-				<div className="w-full mt-5 flex gap-10 flex-wrap justify-center">
-					<div className=" border-r-1 border-color m-4 pr-10">
+			</div>
+			<div className="w-full mt-5 flex flex-col-reverse justify-center gap-y-10 lg:flex-row">
+				<div className=" border-color m-4 pr-10 md:flex md:flex-col md:justify-center md:items-center lg:items-start lg:border-r-1">
+					<div>
 						<div>
 							<p>
 								<span className="text-3xl font-semibold">$93,438</span>
@@ -95,29 +96,26 @@ const ECommerce = () => {
 						</div>
 						<div className="mt-8">
 							<p className="text-3xl font-semibold">$48,487</p>
-
 							<p className="text-gray-500 mt-1">Expense</p>
 						</div>
-
-						<SparkLineChart
-							height={250}
-							width={400}
-							data={SparklineAreaData}
-						/>
-
-						<Button
-							className={
-								"py-2 px-4 bg-blue-400 text-white rounded-md font-bold"
-							}>
-							Download Report
-						</Button>
 					</div>
-					<div className={"flex justify-center items-center"}>
-						<Stacked
-							width={400}
-							height={250}
-						/>
-					</div>
+
+					<SparkLineChart
+						height={250}
+						width={400}
+						data={SparklineAreaData}
+					/>
+
+					<Button
+						className={"py-2 px-4 bg-blue-400 text-white rounded-md font-bold"}>
+						Download Report
+					</Button>
+				</div>
+				<div className={"flex justify-center items-center"}>
+					<Stacked
+						width={400}
+						height={250}
+					/>
 				</div>
 			</div>
 		</Container>
