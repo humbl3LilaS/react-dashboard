@@ -4,8 +4,9 @@ import { IoIosMore } from "react-icons/io";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 import Container from "../components/util/Container";
 import Button from "../components/util/Button";
-import { earningData, SparklineAreaData } from "../data/Data";
+import { earningData, SparklineAreaData, stackedChartData } from "../data/Data";
 import SparkLineChart from "../components/Chart/SparkLine";
+import Stacked from "../components/Chart/Stacked";
 
 const ECommerce = () => {
 	return (
@@ -61,9 +62,9 @@ const ECommerce = () => {
 			<div className={"flex flex-wrap justify-center gap-10 "}>
 				<div
 					className={
-						"m-3 p-4 rounded-2xl bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-780"
+						"w-full m-3 p-4 rounded-2xl bg-white dark:text-gray-200 dark:bg-secondary-dark-bg"
 					}>
-					<div className={"flex justify-between"}>
+					<div className={"flex justify-between px-10"}>
 						<p className={"text-xl font-semibold"}>Revenue Updates</p>
 						<div className={"flex items-center gap-4"}>
 							<p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
@@ -97,12 +98,24 @@ const ECommerce = () => {
 
 							<p className="text-gray-500 mt-1">Expense</p>
 						</div>
-					</div>
-					<div className={"mt-5 h-full "}>
+
 						<SparkLineChart
 							height={250}
 							width={400}
 							data={SparklineAreaData}
+						/>
+
+						<Button
+							className={
+								"py-2 px-4 bg-blue-400 text-white rounded-md font-bold"
+							}>
+							Download Report
+						</Button>
+					</div>
+					<div className={"flex justify-center items-center"}>
+						<Stacked
+							width={400}
+							height={250}
 						/>
 					</div>
 				</div>
