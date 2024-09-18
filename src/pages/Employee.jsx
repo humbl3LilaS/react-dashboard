@@ -7,6 +7,8 @@ import { employeesColumns } from "../columns/emplyoeesColumns";
 const Employee = () => {
 	const table = useCustomTable(employeesData, employeesColumns, {
 		paginationSize: 10,
+		filterInclude: true,
+		filterKey: "Name",
 	});
 
 	return (

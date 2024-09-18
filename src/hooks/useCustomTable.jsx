@@ -4,6 +4,7 @@ import {
 	getSortedRowModel,
 	useReactTable,
 	flexRender,
+	getFilteredRowModel,
 } from "@tanstack/react-table";
 
 import {
@@ -19,9 +20,10 @@ import { useState } from "react";
 export const useCustomTable = (
 	data,
 	columns,
-	{ paginationSize, filterInclude } = {
+	{ paginationSize, filterInclude, filterKey } = {
 		filterInclude: false,
 		paginationSize: 5,
+		filterKey: undefined,
 	},
 ) => {
 	const [sorting, setSorting] = useState([]);
@@ -30,22 +32,42 @@ export const useCustomTable = (
 		pageSize: paginationSize,
 	});
 
+	const [columnFilters, setColumnFilters] = useState([]);
+
 	const table = useReactTable({
 		data,
 		columns,
 		getCoreRowModel: getCoreRowModel(),
 		getSortedRowModel: getSortedRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
+		getFilteredRowModel: getFilteredRowModel(),
 		onPaginationChange: setPagination,
 		onSortingChange: setSorting,
+		onColumnFiltersChange: setColumnFilters,
+		filterFns: {},
 		state: {
 			sorting,
 			pagination,
+			columnFilters,
 		},
 	});
 
 	return (
 		<div className="rounded-md border">
+			<div className={"py-2 px-4 flex justify-end"}>
+				{filterInclude && (
+					<input
+						type={"text"}
+						onChange={(evt) => {
+							table.getColumn(filterKey)?.setFilterValue(evt.target.value);
+						}}
+						placeholder={`filter using ${filterKey.toLowerCase()}....`}
+						className={
+							"py-2 px-4 bg-gray-200 rounded-md border border-gray-500 focus:outline-none"
+						}
+					/>
+				)}
+			</div>
 			<Table>
 				<TableHeader>
 					{table.getHeaderGroups().map((headerGroup) => (
