@@ -3,47 +3,12 @@ import Header from "../components/util/Header";
 
 import { ordersData } from "../data/Data";
 import { orderColumns } from "../columns/ordersColumns";
-import {
-	getCoreRowModel,
-	useReactTable,
-	flexRender,
-	getSortedRowModel,
-	getPaginationRowModel,
-} from "@tanstack/react-table";
-
-import {
-	Table,
-	TableBody,
-	TableHeader,
-	TableHead,
-	TableRow,
-	TableCell,
-} from "../components/ui/Table";
-import { useState } from "react";
+import { useCustomTable } from "../hooks/useCustomTable";
 
 const Orders = () => {
-	const [sorting, setSorting] = useState([]);
-
-	const [pagination, setPagination] = useState({
-		pageIndex: 0,
-		pageSize: 8,
+	const table = useCustomTable(ordersData, orderColumns, {
+		paginationSize: 10,
 	});
-
-	const table = useReactTable({
-		data: ordersData,
-		columns: orderColumns,
-		getCoreRowModel: getCoreRowModel(),
-		getSortedRowModel: getSortedRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
-		onPaginationChange: setPagination,
-		onSortingChange: setSorting,
-		state: {
-			sorting,
-			pagination,
-		},
-	});
-
-	console.log(table.getState().sorting);
 
 	return (
 		<Container className={"p-10 h-full w-full overflow-y-scroll"}>
@@ -58,7 +23,7 @@ const Orders = () => {
 			</Header>
 
 			{/* {Todo: refactor the table into hooks} */}
-			<div className="rounded-md border">
+			{/* <div className="rounded-md border">
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
@@ -127,7 +92,8 @@ const Orders = () => {
 						Next
 					</button>
 				</div>
-			</div>
+			</div> */}
+			{table}
 		</Container>
 	);
 };
