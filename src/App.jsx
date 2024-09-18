@@ -4,7 +4,7 @@ import ECommerce from "./pages/ECommerce";
 import Orders from "./pages/Orders";
 import Employee from "./pages/Employee";
 import Customers from "./pages/Customers";
-import Kanban from "./pages/Kanban";
+import Kanban from "./pages/kanban/Kanban";
 import Editor from "./pages/Editor";
 import Calendar from "./pages/Calendar";
 import ColorPicker from "./pages/ColorPicker";
