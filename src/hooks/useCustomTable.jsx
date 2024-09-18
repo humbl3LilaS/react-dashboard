@@ -32,6 +32,8 @@ export const useCustomTable = (
 		pageSize: paginationSize,
 	});
 
+	const [rowSelection, setRowSelection] = useState({});
+
 	const [columnFilters, setColumnFilters] = useState([]);
 
 	const table = useReactTable({
@@ -44,11 +46,13 @@ export const useCustomTable = (
 		onPaginationChange: setPagination,
 		onSortingChange: setSorting,
 		onColumnFiltersChange: setColumnFilters,
+		onRowSelectionChange: setRowSelection,
 		filterFns: {},
 		state: {
 			sorting,
 			pagination,
 			columnFilters,
+			rowSelection,
 		},
 	});
 
@@ -126,7 +130,7 @@ export const useCustomTable = (
 				</button>
 				<button
 					className={
-						"py-2 px-4 bg-slate-800 text-white font-bold rounded-lg cursor-pointer"
+						"py-2 px-4 bg-slate-800 text-white font-bold rounded-lg cursor-pointer disabled:bg-gray-400"
 					}
 					onClick={() => table.nextPage()}
 					disabled={!table.getCanNextPage()}>
